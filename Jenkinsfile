@@ -50,7 +50,7 @@ pipeline {
     always {
         // Send notification emails at the end of test stage
         echo 'Sending notification emails';
-        emailext attachLog: true, to: 'harshinfinity09@gmail.com', subject: 'Build: ${currentBuild.currentResult}', body: 'Status: ${currentBuild.currentResult}';
+        emailext attachLog: true, to: 'harshinfinity09@gmail.com', subject: "Build: ${currentBuild.currentResult}", body: "Status: ${currentBuild.currentResult}";
     }
 }
 }
