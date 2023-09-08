@@ -5,15 +5,14 @@ pipeline {
             steps {
                 // Build Autimation Tool
                 echo 'Building the code using Maven'
-                tool name: 'Maven'
+               
               
             }
         }
         stage('Unit and Integration Tests') {
             steps {
                 
-                echo 'Running unit tests using JUnit'
-             
+                echo 'Running unit tests using JUnit
                 // Run integration tests using Selenium
                 echo 'Running integration tests using Selenium'
               
@@ -22,8 +21,7 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 // Analyse the code using SonarQube
-                echo 'Analysing the code using SonarQube'
-              
+                echo 'Analysing the code using SonarQube
             }
         }
         stage('Security Scan') {
