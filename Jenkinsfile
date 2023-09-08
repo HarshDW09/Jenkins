@@ -46,11 +46,13 @@ pipeline {
             }
         }
     }
-    post {
-         always {
-            // Send notification emails at the end of test stage
-            echo 'Sending notification emails'
-            emailext attachLog: true, body: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}', subject: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}', to: 'harshinfinity09@gmail.com'
-        }
+   post {
+    always {
+        // Send notification emails at the end of test stage
+        echo 'Sending notification emails';
+        emailext attachLog: true, to: 'harshinfinity09@gmail.com', subject: 'Build: ${currentBuild.currentResult}', body: 'Status: ${currentBuild.currentResult}';
+    }
+}
+
     }
 }
