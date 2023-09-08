@@ -6,7 +6,7 @@ pipeline {
                 // Build Autimation Tool
                 echo 'Building the code using Maven'
                 tool name: 'Maven'
-              '
+              
             }
         }
         stage('Unit and Integration Tests') {
