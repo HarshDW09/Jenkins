@@ -53,5 +53,4 @@ pipeline {
         emailext attachLog: true, to: 'harshinfinity09@gmail.com', subject: 'Build: ${currentBuild.currentResult}', body: 'Status: ${currentBuild.currentResult}';
     }
 }
-
-
+}
