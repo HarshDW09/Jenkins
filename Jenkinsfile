@@ -37,7 +37,7 @@ pipeline {
                 echo 'Running integration tests on the staging environment using Selenium'
              
             }
-        }
+        }              //HD
         stage('Deploy to Production') {
             steps {
                 // Deploy the application to a production server using AWS CLI
