@@ -5,22 +5,16 @@ pipeline {
             steps {
                 // Build Autimation Tool
                 echo 'Building the code using Maven'
-               
-              
             }
         }
         stage('Unit and Integration Tests') {
             steps {
-                
                 echo 'Running unit tests using JUnit'
-                // Run integration tests using Selenium
                 echo 'Running integration tests using Selenium'
-              
             }
         }
         stage('Code Analysis') {
             steps {
-                // Analyse the code using SonarQube
                 echo 'Analysing the code using SonarQube'
             }
         }
@@ -53,8 +47,8 @@ pipeline {
         }
     }
     post {
-        always {
-            // Send notification emails at the end of test and security scan stages
+         always {
+            // Send notification emails at the end of test stage
             echo 'Sending notification emails'
             emailext attachLog: true, body: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}', subject: '${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}', to: 'harshinfinity09@gmail.com'
         }
