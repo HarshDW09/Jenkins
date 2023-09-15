@@ -12,7 +12,17 @@ pipeline {
                 echo 'Running unit tests using JUnit'
                 echo 'Running integration tests using Selenium'
             }
-        }
+            post {
+        success {
+                     echo ‘Sending notification email’;
+                     emailext attachLog: true, to: ‘harshinfinity09@gmail.com’, subject: “Build Stage: currentBuild.currentResult",body:"Status:{currentBuild.currentResult}”;
+                     }                        
+                error {
+                      echo ‘An error occurred in build stage’;
+                        }
+                        }
+                        }
+        
         stage('Code Analysis') {
             steps {
                 echo 'Analysing the code using SonarQube'
