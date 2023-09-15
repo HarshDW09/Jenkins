@@ -14,11 +14,11 @@ pipeline {
             }
             post {
         success {
-                     echo ‘Sending notification email’;
-                     emailext attachLog: true, to: ‘harshinfinity09@gmail.com’, subject: “Build Stage: currentBuild.currentResult",body:"Status:{currentBuild.currentResult}”;
+                     echo 'Sending notification email';
+                     emailext attachLog: true,  to: 'harshinfinity09@gmail.com', subject: "Build Stage: currentBuild.currentResult",body:"Status:{currentBuild.currentResult}”;
                      }                        
                 error {
-                      echo ‘An error occurred in build stage’;
+                      echo 'An error occurred in build stage';
                         }
                         }
                         }
